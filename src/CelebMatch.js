@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CelebMatch.css';
 
-function CelebMatchComponent() {
+function CelebMatchComponent({ predictions }) {
   const [showMatches, setShowMatches] = useState(false);
-  const celebrityName = 'Brad Pitt'; // Replace with the name of the main celebrity
-  const matchingCelebs = [
-    { name: 'Tom Cruise', percentage: 90.8 },
-    { name: 'Angelina Jolie', percentage: 88.2 },
-    { name: 'Leonardo DiCaprio', percentage: 85.5 },
-    // Add more celebrities and matching percentages as needed
-  ];
+  const [celebrityName, setCelebrityName] = useState('');
+  const [matchingCelebs, setMatchingCelebs] = useState([]);
+
+  // Use useEffect to handle predictions and update state
+  useEffect(() => {
+    if (predictions.length > 0) {
+      const sortedPredictions = [...predictions].sort((a, b) => b.probability - a.probability);
+      const top4Predictions = sortedPredictions.slice(0, 4);
+
+      setCelebrityName(top4Predictions[0].className);
+
+      const updatedMatchingCelebs = top4Predictions.map((prediction) => ({
+        name: prediction.className,
+        percentage: (prediction.probability * 100).toFixed(1),
+      }));
+
+      setMatchingCelebs(updatedMatchingCelebs);
+    }
+  }, [predictions]);
 
   return (
     <div className="celeb-container">
