@@ -1,0 +1,27 @@
+.celeb-container {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 40%; /* Reduce the width to 40% of the screen */
+    background-color: #000; /* Dark background color */
+    color: #fff; /* Text color in dark mode */
+    border: 2px solid #fff; /* White border */
+    border-radius: 10px; /* Rounded edges */
+    padding: 10px;
+    cursor: pointer;
+    z-index: 999; /* Ensure the component overlays other content */
+    text-align: center; /* Center the text horizontally */
+  }
+  
+  .main-celeb {
+    font-size: 34px; /* Larger font size for the main celebrity */
+  }
+  
+  .match-item {
+    font-size: 16px; /* Default font size for other celebrities */
+    border-top: 1px solid #fff; /* Add white stripes between names */
+    padding: 5px 0; /* Adjust spacing between names */
+    text-align: center; /* Center the text horizontally */
+  }
+  

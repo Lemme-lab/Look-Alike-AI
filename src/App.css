@@ -1,38 +1,50 @@
 .App {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  background-color: #000; /* Set a dark background color */
+  color: #fff; /* Set text color to white or an appropriate contrast color */
+}
+
+.image-container,
+.webcam-container {
+  width: 50%;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  position: absolute;
+  top: 10px; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  font-size: 44px; /* Adjust the font size as needed */
+  color: #fff; /* Text color */
+  z-index: 1000; /* Ensure it's on top of other components */
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+  position: relative; /* Make sure the parent container has a relative position */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ImageComponent {
+  position: relative; /* Set to relative or absolute as needed */
+  z-index: 1; /* Lower stacking order */
 }
 
-.App-link {
-  color: #61dafb;
+.WebcamComponent {
+  position: relative; /* Set to relative or absolute as needed */
+  z-index: 1; /* Lower stacking order */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CelebMatchComponent {
+  position: relative; /* Set to relative or absolute as needed */
+  z-index: 2; /* Higher stacking order */
 }
+
+

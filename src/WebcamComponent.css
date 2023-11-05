@@ -1,0 +1,12 @@
+.webcam-container {
+  display: flex;
+}
+
+.webcam-frame {
+  z-index: -1; /* Puts the webcam behind other content */
+  margin-right: 100px;
+}
+
+.background-content {
+  /* Style your other content here */
+}
