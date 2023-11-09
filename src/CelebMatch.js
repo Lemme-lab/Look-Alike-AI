@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CelebMatch.css';
 
-function CelebMatchComponent({ predictions }) {
+function CelebMatchComponent({ predictions}) {
   const [showMatches, setShowMatches] = useState(false);
   const [celebrityName, setCelebrityName] = useState('');
   const [matchingCelebs, setMatchingCelebs] = useState([]);
